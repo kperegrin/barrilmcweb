@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BarrilMC Launcher — el launcher oficial del servidor BarrilMC. Cofres de cartas, chat en vivo, votaciones semanales y mucho más.">
+    <meta name="theme-color" content="#ffaa22">
+    <meta property="og:title" content="BarrilMC Launcher">
+    <meta property="og:description" content="Launcher oficial del servidor BarrilMC. Descárgalo gratis y únete a la comunidad.">
+    <meta property="og:type" content="website">
+    <title>BarrilMC Launcher · El launcher oficial de la comunidad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+            <span class="logo-icon">🛢️</span>
+            <span>BarrilMC</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#features">Características</a></li>
+            <li><a href="#cards">Cartas</a></li>
+            <li><a href="#creator">Creador</a></li>
+            <li><a href="#community">Comunidad</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#download" class="nav-cta">Descargar</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<header id="hero" class="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            <span>Servidor en línea · <span id="player-count">42</span> jugadores ahora mismo</span>
+        </div>
+        <h1 class="hero-title">
+            El launcher <span class="hl">oficial</span><br>
+            de <span class="hl">BarrilMC</span>
+        </h1>
+        <p class="hero-subtitle">
+            Conecta al servidor en un click, colecciona cartas, chatea con la
+            comunidad y vota cada semana. Todo desde un launcher hecho a medida.
+        </p>
+        <div class="hero-cta">
+            <a href="#download" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 20h14v-2H5v2zm7-18L5.33 8.67l1.41 1.41L11 5.83V16h2V5.83l4.26 4.25 1.41-1.41L12 2z" transform="rotate(180 12 12)"/>
+                </svg>
+                Descargar para Windows
+            </a>
+            <a href="https://github.com/kperegrin/mi-servidor-launcher" class="btn btn-secondary" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                </svg>
+                Ver código
+            </a>
+        </div>
+        <div class="hero-meta">
+            <div class="meta-item">
+                <strong>1.21.1</strong>
+                <span>Minecraft</span>
+            </div>
+            <div class="meta-item">
+                <strong>Fabric</strong>
+                <span>Mod loader</span>
+            </div>
+            <div class="meta-item">
+                <strong>Gratis</strong>
+                <span>Sin pagos</span>
+            </div>
+            <div class="meta-item">
+                <strong>Open</strong>
+                <span>Código fuente</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Desliza para descubrir</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+        </svg>
+    </div>
+</header>
+
+<!-- ============================================================
+     FEATURES
+     ============================================================ -->
+<section id="features" class="section reveal">
+    <div class="section-head">
+        <span class="eyebrow">Qué incluye</span>
+        <h2>No es solo un launcher.<br>Es <span class="hl">tu casa en BarrilMC</span>.</h2>
+        <p class="lead">Un launcher convencional te abre el juego. El nuestro te abre toda una comunidad.</p>
+    </div>
+
+    <div class="feature-grid">
+        <article class="feature-card">
+            <div class="feature-icon" style="--c:#ffaa22">🚀</div>
+            <h3>Un click y dentro</h3>
+            <p>Pulsas "Jugar servidor" y el launcher sincroniza mods, actualiza Fabric, lanza Minecraft y te conecta al servidor automáticamente. Cero configuración.</p>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon" style="--c:#7fb0ff">💬</div>
+            <h3>Chat en tiempo real</h3>
+            <p>Habla con el resto de jugadores desde el launcher o desde dentro del juego. Mismo chat, sincronizado al instante con Firebase.</p>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon" style="--c:#34d058">🗳️</div>
+            <h3>Votaciones semanales</h3>
+            <p>Cada semana proponemos cambios para el servidor y votáis entre todos. Mapas, modos, eventos, mods... la dirección la marcáis vosotros.</p>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon" style="--c:#b66cff">🎴</div>
+            <h3>Cofre de cartas</h3>
+            <p>3 tiradas cada 2 horas, hasta 12 acumuladas. Coleccionas, fusionas, completas tu Pokédex. Cuanto más juegas, más cartas raras consigues.</p>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon" style="--c:#ff6b6b">⚡</div>
+            <h3>Auto-actualización</h3>
+            <p>Nunca tienes que reinstalarlo. Cuando hay versión nueva el launcher se actualiza solo, en segundos, y te lanza la siguiente vez.</p>
+        </article>
+        <article class="feature-card">
+            <div class="feature-icon" style="--c:#45d483">🛡️</div>
+            <h3>Tamper-evident</h3>
+            <p>Tu inventario está firmado criptográficamente. Nadie puede editar el JSON local para darse cartas: el launcher detecta la trampa y la rechaza.</p>
+        </article>
+    </div>
+</section>
+
+<!-- ============================================================
+     CARDS SHOWCASE
+     ============================================================ -->
+<section id="cards" class="section reveal">
+    <div class="section-head">
+        <span class="eyebrow">Sistema de cartas</span>
+        <h2>Colecciona, fusiona,<br><span class="hl">descubre la Pokédex completa</span>.</h2>
+        <p class="lead">49 cartas y subiendo. Cada jugador, cada admin, cada momento icónico del server tiene su carta.</p>
+    </div>
+
+    <div class="rarity-row">
+        <div class="rarity-item" style="--c:#9aa3b8">
+            <div class="rarity-pct">50%</div>
+            <div class="rarity-name">Común</div>
+        </div>
+        <div class="rarity-item" style="--c:#45d483">
+            <div class="rarity-pct">30%</div>
+            <div class="rarity-name">Poco común</div>
+        </div>
+        <div class="rarity-item" style="--c:#4ea6ff">
+            <div class="rarity-pct">15%</div>
+            <div class="rarity-name">Rara</div>
+        </div>
+        <div class="rarity-item" style="--c:#b66cff">
+            <div class="rarity-pct">4%</div>
+            <div class="rarity-name">Mítica</div>
+        </div>
+        <div class="rarity-item" style="--c:#ffaa22">
+            <div class="rarity-pct">1%</div>
+            <div class="rarity-name">Leyenda</div>
+        </div>
+    </div>
+
+    <div class="cards-demo">
+        <div class="demo-card" style="--c:#9aa3b8">
+            <div class="demo-img" style="background:linear-gradient(135deg,#1f2536,#0c1019);">⚪</div>
+            <div class="demo-name">Común</div>
+        </div>
+        <div class="demo-card" style="--c:#4ea6ff">
+            <div class="demo-img" style="background:linear-gradient(135deg,#162234,#08111b);">🔵</div>
+            <div class="demo-name">Rara</div>
+        </div>
+        <div class="demo-card" style="--c:#b66cff">
+            <div class="demo-img" style="background:linear-gradient(135deg,#231538,#10081c);">🟣</div>
+            <div class="demo-name">Mítica</div>
+        </div>
+        <div class="demo-card" style="--c:#ffaa22">
+            <div class="demo-img" style="background:linear-gradient(135deg,#3a2510,#1c1004);">🟠</div>
+            <div class="demo-name">Leyenda</div>
+        </div>
+    </div>
+
+    <div class="cards-feature-row">
+        <div class="cf-item">
+            <div class="cf-icon">⏱️</div>
+            <h4>Tiradas cada 2h</h4>
+            <p>3 tiradas se acumulan cada 2 horas. Hasta 12 guardadas. El tiempo corre con el launcher cerrado.</p>
+        </div>
+        <div class="cf-item">
+            <div class="cf-icon">🔀</div>
+            <h4>Fusión 3 → 1</h4>
+            <p>Combina 3 cartas de la misma rareza para subirla un nivel. ¿3 raras? Tienes una mítica garantizada.</p>
+        </div>
+        <div class="cf-item">
+            <div class="cf-icon">🎁</div>
+            <h4>Regalos del admin</h4>
+            <p>Cuando los admins regalan un cofre a la comunidad, lo recibes la próxima vez que abras el launcher.</p>
+        </div>
+        <div class="cf-item">
+            <div class="cf-icon">📖</div>
+            <h4>Pokédex</h4>
+            <p>Ve TODAS las cartas obtenibles. Las que tienes a color, las que te faltan en silueta gris.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CREATOR
+     ============================================================ -->
+<section id="creator" class="section reveal">
+    <div class="creator-card">
+        <div class="creator-avatar">
+            <div class="creator-avatar-inner">🛢️</div>
+        </div>
+        <div class="creator-body">
+            <span class="eyebrow">Detrás del proyecto</span>
+            <h2><span class="hl">ElKimiZG</span> · Creador de BarrilMC</h2>
+            <p class="lead">
+                Hola, soy ElKimiZG. Llevo años jugando a Minecraft y un día decidí montar un
+                servidor para amigos. La cosa creció, hicimos una comunidad, y al final acabé
+                programando este launcher para que entrar al server fuera tan fácil como abrir
+                un .exe. Lo que ves es un fork de HMCL, reescrito y mejorado para BarrilMC.
+            </p>
+            <div class="creator-stats">
+                <div class="stat">
+                    <strong>20+</strong>
+                    <span>Versiones publicadas</span>
+                </div>
+                <div class="stat">
+                    <strong>49</strong>
+                    <span>Cartas en el catálogo</span>
+                </div>
+                <div class="stat">
+                    <strong>Open</strong>
+                    <span>Código en GitHub</span>
+                </div>
+            </div>
+            <div class="creator-links">
+                <a href="https://www.youtube.com/@barrilmc" target="_blank" rel="noopener" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    Canal YouTube
+                </a>
+                <a href="https://github.com/kperegrin" target="_blank" rel="noopener" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     COMMUNITY / SERVER
+     ============================================================ -->
+<section id="community" class="section reveal">
+    <div class="section-head">
+        <span class="eyebrow">Únete</span>
+        <h2>El servidor te espera.<br><span class="hl">Solo necesitas el launcher.</span></h2>
+    </div>
+
+    <div class="server-card">
+        <div class="server-card-glow"></div>
+        <div class="server-info">
+            <div class="server-name">
+                <h3>BarrilMC Server</h3>
+                <span class="badge-online">● ONLINE</span>
+            </div>
+            <div class="server-detail-row">
+                <div class="server-detail">
+                    <span>IP</span>
+                    <code>impact.dathost.net:17818</code>
+                </div>
+                <div class="server-detail">
+                    <span>Versión</span>
+                    <code>1.21.1 · Fabric</code>
+                </div>
+                <div class="server-detail">
+                    <span>Modo</span>
+                    <code>Survival + Eventos</code>
+                </div>
+            </div>
+            <p class="server-tagline">
+                Un servidor pequeño y bien cuidado. Eventos PvP, zonas para explorar,
+                economía, cosméticos, tiendas... todo decidido por la comunidad en las
+                votaciones semanales.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     DOWNLOAD
+     ============================================================ -->
+<section id="download" class="section reveal section-cta">
+    <div class="download-card">
+        <span class="eyebrow">Descarga</span>
+        <h2>Descarga el launcher gratis.<br><span class="hl">Sin registro, sin trampas.</span></h2>
+        <p class="lead">Pulsas, descargas, abres. El launcher se encarga de instalar Minecraft, mods, Java… todo.</p>
+        <div class="download-buttons">
+            <a href="https://github.com/kperegrin/mi-servidor-launcher/releases/latest/download/BarrilMC-Launcher.exe" class="btn btn-primary btn-xl">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                </svg>
+                Descargar para Windows
+            </a>
+            <a href="https://github.com/kperegrin/mi-servidor-launcher/releases/latest" class="btn btn-secondary btn-xl">
+                Otras plataformas (.jar / .sh)
+            </a>
+        </div>
+        <p class="dl-meta">Última versión: <strong id="latest-version">1.0.23</strong> · Windows / Linux / macOS · ~33 MB</p>
+        <p class="dl-warn">
+            ⚠️ Windows puede avisarte de "ejecutable no firmado". Pulsa <strong>Más información → Ejecutar de todas formas</strong>.
+            Es normal en launchers caseros, no es un virus.
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section id="faq" class="section reveal">
+    <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Preguntas frecuentes</h2>
+    </div>
+
+    <div class="faq-list">
+        <details class="faq-item">
+            <summary>¿Necesito tener Minecraft instalado?</summary>
+            <p>No. El launcher descarga e instala Minecraft, Fabric y los mods automáticamente. Solo necesitas una cuenta de Minecraft Java Edition (Microsoft) para iniciar sesión.</p>
+        </details>
+        <details class="faq-item">
+            <summary>¿Necesito Java?</summary>
+            <p>Lo recomendable es Java 21. Si no lo tienes, el launcher detecta su ausencia y te enlaza a Adoptium (la versión open-source de OpenJDK). Lo instalas, abres el launcher otra vez y ya está.</p>
+        </details>
+        <details class="faq-item">
+            <summary>¿Por qué Windows dice que es peligroso?</summary>
+            <p>Porque el .exe no está firmado con un certificado comercial (cuesta cientos de euros al año). Windows desconfía por defecto. Pulsa "Más información → Ejecutar de todas formas" y aprueba el binario. Pasa una vez y ya no vuelve a salir.</p>
+        </details>
+        <details class="faq-item">
+            <summary>¿Mis cartas se guardan en la nube?</summary>
+            <p>El catálogo de cartas sí (para que pueda añadir nuevas sin tener que actualizar el launcher). Tu inventario personal se guarda local en tu PC, firmado criptográficamente para que nadie pueda darte cartas falsas editando un JSON.</p>
+        </details>
+        <details class="faq-item">
+            <summary>¿Es de código abierto?</summary>
+            <p>Sí. Todo el código del launcher está en GitHub: <a href="https://github.com/kperegrin/mi-servidor-launcher" target="_blank" rel="noopener">kperegrin/mi-servidor-launcher</a>. Es un fork de HMCL (que también es open source) adaptado para BarrilMC.</p>
+        </details>
+        <details class="faq-item">
+            <summary>¿Lo voy a poder usar en Linux/Mac?</summary>
+            <p>Sí, hay un .jar y un .sh en cada release. Necesitas Java 21 instalado. El .exe es solo para Windows.</p>
+        </details>
+        <details class="faq-item">
+            <summary>¿El launcher manda datos a alguien?</summary>
+            <p>Solo lo necesario para que funcione: tu cuenta a Microsoft para autenticarte, mensajes al chat de Firebase si lo usas, y descargas de mods desde GitHub Releases. Nada más. Ningún tracking, ningún analytics.</p>
+        </details>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <span class="logo-icon">🛢️</span>
+                <strong>BarrilMC</strong>
+            </div>
+            <p>Launcher hecho con cariño para una comunidad pequeña.</p>
+        </div>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h5>Proyecto</h5>
+                <a href="https://github.com/kperegrin/mi-servidor-launcher" target="_blank" rel="noopener">Repositorio GitHub</a>
+                <a href="https://github.com/kperegrin/mi-servidor-launcher/releases" target="_blank" rel="noopener">Todas las versiones</a>
+                <a href="https://github.com/kperegrin/mi-servidor-launcher/issues" target="_blank" rel="noopener">Reportar bugs</a>
+            </div>
+            <div class="footer-col">
+                <h5>Comunidad</h5>
+                <a href="https://www.youtube.com/@barrilmc" target="_blank" rel="noopener">YouTube @barrilmc</a>
+                <a href="https://www.youtube.com/@barrilmc/posts" target="_blank" rel="noopener">Publicaciones</a>
+            </div>
+            <div class="footer-col">
+                <h5>Legal</h5>
+                <a href="https://www.minecraft.net/es-es/eula" target="_blank" rel="noopener">EULA de Minecraft</a>
+                <a href="https://github.com/HMCL-dev/HMCL" target="_blank" rel="noopener">Upstream: HMCL</a>
+                <a href="https://github.com/kperegrin/mi-servidor-launcher/blob/main/LICENSE" target="_blank" rel="noopener">Licencia GPLv3</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 ElKimiZG · BarrilMC Launcher</span>
+        <span>No afiliado a Mojang/Microsoft</span>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
